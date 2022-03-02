@@ -4,13 +4,13 @@ const sogaSaltar = 140;
 const camperaCorrer = 500;
 
 const iva = 0.21;
-let edad
+let edad;
 
 let subTotal = 0;
 let totalConIva= 0;
 let descuentoCompra = 0;
 let opcion;
-let Items =0;
+let itemsCompra =0;
 
 /*Funciones*/
 function indumentaria(){
@@ -35,17 +35,17 @@ function indumentaria(){
         break;
     
     default:
-        alert(`opcion incorrecta!`)
+        alert(`opcion incorrecta!`);
         break;
     }
 }
 function total(){
-    totalConIva = subTotal +  (subTotal*iva)
+    totalConIva = subTotal +  (subTotal*iva);
     return totalConIva
 }
 function descuento(){
     if(totalConIva >= 1000){
-        totalConIva +(totalConIva*0.10);
+        descuentoCompra = totalConIva -(totalConIva*0.10);
     }
     return descuentoCompra
 }
@@ -57,13 +57,13 @@ let enter = confirm(`Bievenido a Hermes Running Shoes, compramos?:`);
 if(enter){
     edad = Number( prompt(`Excelente pero primero que nada, ¿cuantos años tienes?: `));
     if((edad) >= 18){
-        Items = Number( prompt(`cuantas prendas vas a comprar?`));
-        for(let i= 0; i<Items; i++){
+        itemsCompra = Number( prompt(`cuantas prendas vas a comprar?`));
+        for(let i= 0; i<itemsCompra; i++){
             indumentaria()
             total()
             descuento()
         }
-        alert(`el total de tu compra es ${totalConIva}`)
+        alert(`el total de tu compra es ${totalConIva} y tu total con descuento es ${descuentoCompra}`);
     } else{
         alert(`Lo siento, pero debes estar acompañado de un adulto para realizar gastos online`);
         
